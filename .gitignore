@@ -1,0 +1,45 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+
+# Environment files
+.env
+*.env
+
+# Logs
+logs
+*.log
+*.out
+*.err
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Ansible sensitive files
+*.retry
+*.vault_pass
+*.pem
+*.key
+
+# SSH keys
+.ssh/
+id_rsa
+id_rsa.pub
+practice.pem
+
+# Python stuff (if using Ansible venv)
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Terraform (if you mix infra code later)
+.terraform/
+*.tfstate
+*.tfstate.backup
+crash.log
+.terraform.lock.hcl
+

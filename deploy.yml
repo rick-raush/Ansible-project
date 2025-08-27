@@ -2,7 +2,7 @@
 - name: Deploy Node.js App with Nginx (Rolling Deployment)
   hosts: webservers
   become: yes
-  serial: 1   # 🚀 Deploy one host at a time
+  serial: 1
 
   vars_prompt:
     - name: node1_ip
@@ -17,17 +17,17 @@
     node_version: 18
 
   tasks:
-    - name: Update apt cache
-      ansible.builtin.apt:
+    - name: Update yum cache
+      ansible.builtin.yum:
         update_cache: yes
 
     - name: Install Node.js
-      ansible.builtin.apt:
+      ansible.builtin.yum:
         name: nodejs
         state: present
 
     - name: Install npm
-      ansible.builtin.apt:
+      ansible.builtin.yum:
         name: npm
         state: present
 
@@ -37,7 +37,7 @@
         global: yes
 
     - name: Install Nginx
-      ansible.builtin.apt:
+      ansible.builtin.yum:
         name: nginx
         state: present
 
@@ -57,7 +57,7 @@
     - name: Configure Nginx
       ansible.builtin.template:
         src: templates/nginx.conf.j2
-        dest: /etc/nginx/sites-available/default
+        dest: /etc/nginx/conf.d/nodeapp.conf
       notify: Restart Nginx
 
   handlers:
