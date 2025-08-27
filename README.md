@@ -1,14 +1,13 @@
-````markdown
 # 🚀 Ansible Node.js Deployment
 
 This project automates the deployment of a **Node.js application with Nginx** on AWS EC2 instances using **Ansible**.  
 It supports **rolling deployments** (one server at a time) for zero downtime.
 
----
 
+---
+````markdown
 ## 📂 Project Structure
 
-```text
 ansible-proj/
 ├── hosts.yml                # Ansible inventory file (with node1, node2)
 ├── deploy.yml               # Main Ansible playbook
@@ -111,5 +110,3 @@ ansible-playbook -i hosts.yml deploy.yml
 * Add CI/CD pipeline for auto-deployment
 * Configure HTTPS with Let’s Encrypt
 * Add monitoring/alerts with Prometheus & Grafana
-
-`````
